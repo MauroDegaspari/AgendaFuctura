@@ -1,7 +1,7 @@
 # AgendaFuctura
 ### Exercicio final do módulo 3 do curso da academia Java na Fuctura.
 
-[![NPM](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/MauroDegaspari/Contacttura/blob/master/LICENSE)
+[![NPM](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/MauroDegaspari/AgendaFuctura/blob/master/LICENSE)
 
 ## Objetivo:
 aplicação web de agenda de clientes com seus contatos, onde posso inserir e pesquisar clientes com seus contatos.
