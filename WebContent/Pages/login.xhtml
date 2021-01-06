@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<title>Login</title>
+</h:head>
+
+<h:body >
+
+	<script type="text/javascript">
+		function handleLoginRequest(xhr, status, args) {
+			if (args.validationFailed || !args.loggedIn) {
+				PF('dlg').jq.effect("shake", {
+					times : 5
+				}, 100);
+			} else {
+				PF('dlg').hide();
+				$('#loginLink').fadeOut();
+			}
+		}
+	</script>
+
+<h1 align="center">Agenda de Clientes</h1>
+	<h:form role="form">
+		<table  style="width: 40%;">
+
+				<tr>
+				<td width="20%" align="center"><p:graphicImage library="img" name="fuctura.jpg" />
+				</td>
+				
+				<p:growl id="growl" sticky="true" showDetail="true" life="3000" />						
+				<td>
+					<div id="menu">
+					<p:outputLabel for="nomeBean" value="Usuário:" style="padding-right:12px;" /> 
+					<p:inputText  value="#{LoginBean.nomeBean}" id="nomeBean" label="nomeBean" /> <br></br> 
+					</div>
+					<div id="menu1">
+					<p:outputLabel for="senhaBean" value="Senha:" style="padding-right:20px;" /> 
+					<p:password id="senhaBean" value="#{LoginBean.senhaBean}"  label="senhaBean" /><br></br>
+					</div>
+					
+					<p:link value="Cadastra-se" outcome="cadastroUsuario.xhtml" style="padding:45px;" />
+					
+					<p:commandButton value="Login" update="@form"  class="butao" ajax="true" action="#{LoginBean.verificarLogin}"  oncomplete="handleLoginRequest(xhr, status, args)"/>
+
+				</td>
+			</tr>
+		</table>
+	</h:form>
+
+</h:body>
+</html>

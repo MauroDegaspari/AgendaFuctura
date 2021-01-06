@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+     xmlns:ui="http://java.sun.com/jsf/facelets">
+     
+    <h:head>
+    <title>Cadastro de cliente</title>
+    </h:head>
+ 
+    <h:body>
+    
+    <h:form role="form">
+          <p:fieldset legend="Cadastra Cliente" style="margin-bottom:20px">
+        <p:panelGrid columns="2">
+    <f:facet name="header">
+        <p:graphicImage name="/WebContent/img/fuctura.jpg" />
+    </f:facet>
+     
+    <h:outputLabel value="Nome" />
+	<p:inputText value="#{CadastraClienteBean.cliente.nome}"  label="nome" />
+	
+	<h:outputLabel value="CPF"/>
+	<p:inputText id="cpf" value="#{CadastraClienteBean.cliente.cpf}" />
+	
+	<h:outputLabel value="Idade"/>
+	<p:inputText value="#{CadastraClienteBean.cliente.idade}" label="idade" />
+	
+	<h:outputLabel value="Sexo"/>
+	<p:inputText value="#{CadastraClienteBean.cliente.sexo}" label="sexo"/>  
+	
+	<h:outputLabel value="Interesses" />
+	<p:inputTextarea value="#{CadastraClienteBean.cliente.interesses}" label="interesses"/>   
+	
+	<h:outputLabel value="Telefone"/>
+	<p:inputText value="#{CadastraClienteBean.contato.telefone}" label="tel" />
+	
+	<h:outputLabel value="E-mail"/>
+	<p:inputText value="#{CadastraClienteBean.contato.email}" label="email" />
+	
+	<p:commandButton value="Cadastar" update="@form" actionListener="#{CadastraClienteBean.CadastrarCliente}" />
+ 
+    <p:link outcome="index.xhtml" value="Voltar para Página Inicial."/>
+    
+	
+</p:panelGrid>
+
+ </p:fieldset>
+     </h:form>  
+    </h:body>
+</html>

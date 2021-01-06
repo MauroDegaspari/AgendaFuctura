@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body{
+	background: gray;
+}
+table{
+	border-radius:8px;
+	position: absolute;
+	left: 25%;
+	background: #fff;
+
+}	
+
+#menu{
+	display: block;
+	justify-content: block;
+}
+
+#menu1{
+	
+	padding-top:10px;
+}
+.butao{
+	border-radius: 12px;
+	background: black;
+	color: #ffff;
+	margin-top:25px;
+	
+}

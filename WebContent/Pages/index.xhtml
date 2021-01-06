@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+     
+    <h:head>
+    	
+    	<h:outputStylesheet library="css" name="styleIndex.css"/>
+    
+    <title> Página inicial</title>
+    </h:head>
+ 
+    <h:body>
+   <h:form role="form"> 
+ 
+		<h1 align="center">Agenda de Clientes</h1>
+	
+    <div class="usuario">
+     <h:outputText value="Usuário: " />
+    <h:outputLink id="usuario" value="#">
+        <h:outputText value="Usuario" />
+        <p:link value="SAIR" outcome="login.xhtml" />
+    </h:outputLink>
+    </div>
+    
+      <p:panelGrid columns="2" style="width: 100%">
+			<p:outputLabel value="Nome" />
+			<p:inputText value="#{CadastraClienteBean.cliente.nome}" label="nome" />
+				
+			<p:outputLabel value="CPF" />
+			<p:inputText id="cpf" mask="999.999.999-99"
+				value="#{CadastraClienteBean.cliente.cpf}" label="cpf" />
+		</p:panelGrid>
+		
+				
+			<div class="botoes">
+			<p:commandButton  class="botao" value="Pesquisar" update="@form" actionListener="#{CadastraClienteBean.PesquisarCliente}" />
+			<p:commandButton class="botao" value="Lista de Contato" action="#{CadastraClienteBean.dialog}" update="@form" process="@this"/>
+			<p:commandButton class="botao" value="Limpar" type="reset" />
+			<p:linkButton class="botao" value="Cadastrar Cliente" outcome="cadastraCliente" />
+			</div>
+			
+		
+		<p:dataTable value="#{CadastraClienteBean.listarCliente}" var="clientes">
+		
+			<f:facet name="header">
+	           Contatos cadastrados
+	        </f:facet>
+			<p:column headerText="Nome">
+				<h:outputText value="#{clientes.nome}" />
+			</p:column>
+
+			<p:column headerText="Interesse do Cliente">
+				<h:outputText value="#{clientes.interesses}" />
+			</p:column>
+			
+			
+<!-- 			<p:column headerText="Telefone"> -->
+<!-- 				<h:outputText value="#{clientes.telefone}" /> -->
+<!-- 			</p:column> -->
+			
+<!-- 			<p:column headerText="Email"> -->
+<!-- 				<h:outputText value="#{clientes.email}" /> -->
+<!-- 			</p:column> -->
+
+
+		</p:dataTable>
+		
+		
+		
+		</h:form>
+    </h:body>
+</html>
