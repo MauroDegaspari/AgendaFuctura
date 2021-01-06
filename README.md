@@ -12,7 +12,7 @@ O projeto é uma agenda de contatos onde é possivel criar uma lista e que permi
 
 Tela inicial | tela com pesquisa
 ------------ | -------------
-  ![LOGIN](https://github.com/MauroDegaspari/AgendaFuctura/blob/master/LOGIN.png) | ![INDEX](https://github.com/MauroDegaspari/AgendaFuctura/blob/master/INDEX.png)
+  ![LOGIN](https://github.com/MauroDegaspari/AgendaFuctura/blob/master/login.png) | ![INDEX](https://github.com/MauroDegaspari/AgendaFuctura/blob/master/index.png)
 
 # Tecnologias utilizadas
 ## Back end
