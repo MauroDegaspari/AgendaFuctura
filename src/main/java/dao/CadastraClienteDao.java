@@ -12,5 +12,5 @@ public boolean InserirCliente(Cliente cliente, Contato contato);
 	
 public List<Cliente> PesquisarCliente(Cliente cliente);
 
-public List<Cliente> listarClientes();
+
 }
