@@ -35,11 +35,11 @@ public class CadastraClienteDaoImplements implements CadastraClienteDao {
 
 		Query query = ent.createQuery(sql);
 
-		List<Cliente> listaPacientes = query.getResultList();
+		List<Cliente> lista = query.getResultList();
 
 		ent.close();
 
-		return listaPacientes;
+		return lista;
 	}
 
 	// String montarWhere
@@ -56,21 +56,7 @@ public class CadastraClienteDaoImplements implements CadastraClienteDao {
 		return onde;
 	}
 
-	@Override
-	public List<Cliente> listarClientes() {
-		
-		String sql = "from Profissional p";
-
-		EntityManager ent = JpaUtil.getEntityManager();
-
-		Query query = ent.createQuery(sql);
-
-		List<Cliente> listaProfissionais = query.getResultList();
-
-		ent.close();
-
-		return listaProfissionais;
-	}
+	
 
 	
 
